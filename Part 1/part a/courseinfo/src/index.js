@@ -56,23 +56,22 @@ const App = () => {
     ]
   }
 
-  const [counter, setCounter] = useState(0)
-
-  setTimeout(
-    () => setCounter(counter + 1),
-    1000)
-
-  console.log('rendering...', counter)
 
   return (
     <div>
       <Header course={course.name} />
       <Content parts={course.parts} />
       <Total parts={course.parts} />
-      <div>{counter}</div>
     </div>
   )
 }
+
+// Probably, I suppose that is good practice to pass, as props, all the data inside the parent component,
+// because in future we might want some children to communicate data to each other, but they can't since 
+// data is only passed from top to bottom.
+// Since it wasn't specified, I passed only parts of the course object to the respective children components
+// and not the whole course object.
+
 
 ReactDOM.render(<App />, document.getElementById('root'))
 

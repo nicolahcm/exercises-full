@@ -111,9 +111,24 @@ Even better:
 const Hello = ({ name, age }) => { .....
 
 
+///////////////////////////////////////////////
+HOW TO USE HOOKS:
+
+    import {useState} from 'react'
+
+    const App = () => {
+      const [state1, setState1] = useState(initialState)
+
+      ...
+
+    }
+///////////////////////////////////////////////
+
+
 
 8) Ogni volta che una componente modifica stato (setState), 
 viene rirenderizzata = rieseguito tutto il codice del suo corpo! (escludendo la parte dello state e setState.)
+". Calling a function which changes the state causes the component to rerender."
 
 
 9) Usually we do not define event handlers in JSX.
@@ -136,3 +151,28 @@ state = newState
 12) Conditional rendering... Use a new component. If something, returns some JSX. If something else, return other JSX.
 
 Usually basing on some states of our application.
+
+
+12.5) minor note: 
+don't do :
+console.log('props value is'+ props)  // Will print [[Object Object]] or something like that.
+
+do :
+console.log('props value is', props)  // It separates the objects!.
+
+
+12.6) In future: check the part on debugger. Both in the console and in the code.
+
+12.7) Useful react plugin!.
+
+
+13) when rendering with ReactDOM, we can pass props!
+ReactDOM.render(
+  <App counter={counter} />, 
+  document.getElementById('root')
+)
+
+
+
+14) Question. When changing a state, what about the remaining code of the component? Will that be executed?
+
