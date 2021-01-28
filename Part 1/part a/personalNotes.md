@@ -174,5 +174,9 @@ ReactDOM.render(
 
 
 
+
+
+????? TO CHECK ??????
+
 14) Question. When changing a state, what about the remaining code of the component? Will that be executed?
 
