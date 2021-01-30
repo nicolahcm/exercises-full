@@ -126,8 +126,8 @@ const App = () => {
         let wantDelete = window.confirm('Are you sure you want to delete?')
 
         if (wantDelete) {
-            const id = parseInt(e.target.getAttribute('data-id'))
-
+            const id = e.target.getAttribute('data-id')
+            console.log(id)
             // deleting from UI
             setPersons(persons.filter(person => person.id !== id))
 
